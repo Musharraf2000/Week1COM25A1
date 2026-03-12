@@ -79,26 +79,60 @@
 //}
 
 
-int[] marks = new int[5];
+//int[] marks = new int[5];
 
-for(int i = 0; i < 5; i++)
+//for(int i = 0; i < 5; i++)
+//{
+//    Console.WriteLine($"Enter marks for student {i + 1} : ");
+//    marks[i] = Convert.ToInt32(Console.ReadLine());
+//}
+
+//int highest = marks[0];
+//int sum = 0;
+
+
+//foreach (int mark in marks)
+//{
+//    if(mark > highest)
+//    {
+//        highest = mark;
+//    }
+//    sum += mark;
+//}
+
+//Console.WriteLine($"Highest mark is {highest}");
+//Console.WriteLine($"Average mark is {sum / marks.Length}");
+
+//List<int> numbers = new List<int>([10,20,30]);
+//numbers.Add(40); //[10,20,30,40]
+//numbers.Add(50); //[10,20,30,40,50]
+//numbers.Insert(4, 45); //[10,20,30,40,45,50]
+//numbers.Remove(20); //[10,30,40,45,50]
+//numbers.RemoveAt(3); //[10,30,40,50]
+
+//foreach(int number in numbers)
+//{
+//    Console.WriteLine(number);
+//}
+
+List<string> names = new List<string>();
+while (true)
 {
-    Console.WriteLine($"Enter marks for student {i + 1} : ");
-    marks[i] = Convert.ToInt32(Console.ReadLine());
-}
-
-int highest = marks[0];
-int sum = 0;
-
-
-foreach (int mark in marks)
-{
-    if(mark > highest)
+    Console.WriteLine("Enter a name : ");
+    string userInput = Console.ReadLine();
+    if(userInput.ToLower().Equals("stop") || userInput.ToLower().Equals("done"))
     {
-        highest = mark;
+        break;
     }
-    sum += mark;
+    else
+    {
+        names.Add(userInput);
+    }
 }
 
-Console.WriteLine($"Highest mark is {highest}");
-Console.WriteLine($"Average mark is {sum / marks.Length}");
+Console.WriteLine("Names entered : ");
+
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
