@@ -46,21 +46,59 @@
 //}
 
 
-int userInput = -1;
-int sum = 0;
+//int userInput = -1;
+//int sum = 0;
 
-while(userInput != 0)
+//while(userInput != 0)
+//{
+//    Console.WriteLine("Enter a number : ");
+//    userInput = Convert.ToInt32(Console.ReadLine());
+//    if(userInput < 0)
+//    {
+//        continue;
+//    }
+//    else
+//    {
+//        sum += userInput;
+//    }
+//}
+
+//Console.WriteLine($"Final sum : {sum}");
+
+//int[] numbers = new int[5]; //[ - - - - -]
+//numbers[0] = 10; //[ 10 - - - -]
+//numbers[1] = 20; //[ 10 20 - - -]
+//numbers[2] = 30; //[ 10 20 30 - -]
+//numbers[3] = 40; //[ 10 20 30 40 -]
+//numbers[4] = 50; //[ 10 20 30 40 50]
+////numbers[5] = 60; //[ 10 20 30 40 50 60] // This will throw an error because the array size is 5 and we are trying to access index 5 which is out of bounds
+
+//foreach(int number in numbers)
+//{
+//    Console.WriteLine(number);
+//}
+
+
+int[] marks = new int[5];
+
+for(int i = 0; i < 5; i++)
 {
-    Console.WriteLine("Enter a number : ");
-    userInput = Convert.ToInt32(Console.ReadLine());
-    if(userInput < 0)
-    {
-        continue;
-    }
-    else
-    {
-        sum += userInput;
-    }
+    Console.WriteLine($"Enter marks for student {i + 1} : ");
+    marks[i] = Convert.ToInt32(Console.ReadLine());
 }
 
-Console.WriteLine($"Final sum : {sum}");
+int highest = marks[0];
+int sum = 0;
+
+
+foreach (int mark in marks)
+{
+    if(mark > highest)
+    {
+        highest = mark;
+    }
+    sum += mark;
+}
+
+Console.WriteLine($"Highest mark is {highest}");
+Console.WriteLine($"Average mark is {sum / marks.Length}");
